@@ -39,12 +39,19 @@ class MyFrame4 extends JFrame implements ActionListener{
             int v1=Integer.parseInt(t1.getText());
             v1++;
             t1.setText(""+v1);
+            JOptionPane.showMessageDialog(this, "Sum ="+v1);
         } else if (target == b2) {
             int v1=Integer.parseInt(t1.getText());
-            v1--;
-            t1.setText(""+v1);
+            if (v1 > 0) {
+                v1--;
+                t1.setText("" + v1);
+                JOptionPane.showMessageDialog(this, "Sum =" + v1);
+            } else {
+                JOptionPane.showMessageDialog(this, "Already a zero");
+            }
         } else if (target == b3) {
             t1.setText("0");
+            JOptionPane.showMessageDialog(this, "Value reseted");
         } else {
             System.exit(0);
         }
